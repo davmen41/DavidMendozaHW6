@@ -89,7 +89,8 @@ int main()
   //read headers from the file
   binFile.read((char*) binHeader, sizeof(BinaryHeaderFile));
   
-  //read in feedface and add it into the first cell
+  //read in feedface using stringstream and convert it to hex 
+  //add it into the first cell
   hexstream << hex << binHeader->magicNumber;
   string upperStr = hexstream.str();
   transform(upperStr.begin(), upperStr.end(), upperStr.begin(), (int (*)(int))toupper);
